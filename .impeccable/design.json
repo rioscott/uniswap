@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-14T00:00:00.000Z",
+  "title": "Design System: Uniswap Swap Morph",
+  "extensions": {
+    "colorMeta": {
+      "accent": {
+        "role": "primary",
+        "displayName": "Action Magenta",
+        "canonical": "#F50DB4",
+        "tonalRamp": ["#3A0029", "#6B004C", "#9D006F", "#CE0092", "#F50DB4", "#FA65CF", "#FDB5E7", "#FDEAF7"]
+      },
+      "canvas": {
+        "role": "neutral",
+        "displayName": "Canvas White",
+        "canonical": "#FFFFFF",
+        "tonalRamp": ["#222222", "#444444", "#666666", "#888888", "#AAAAAA", "#CCCCCC", "#EEEEEE", "#FFFFFF"]
+      }
+    },
+    "typographyMeta": {
+      "title": { "displayName": "Title", "purpose": "Form title and primary status label." },
+      "body": { "displayName": "Body", "purpose": "Panel labels, estimates, and metadata." },
+      "label": { "displayName": "Action", "purpose": "Primary trigger label." }
+    },
+    "shadows": [
+      { "name": "chip-lift", "value": "0 1px 2px #0000000F", "purpose": "Separates the token chip from a gray panel." },
+      { "name": "control-lift", "value": "0 1px 3px #00000014", "purpose": "Separates the direction control from both panels." }
+    ],
+    "motion": [
+      { "name": "state-morph", "value": "300ms spring, bounce 0", "purpose": "Connects the trigger and swap preview." },
+      { "name": "press", "value": "200ms ease-out", "purpose": "Provides tactile trigger feedback at scale 0.97." }
+    ],
+    "breakpoints": [
+      { "name": "form-fit", "value": "512px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Start swap button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The only interactive control in the two-state motion study.",
+      "html": "<button class=\"ds-start-swap\">Start a swap</button>",
+      "css": ".ds-start-swap { width: 120px; height: 40px; border: 0; border-radius: 12px; background: var(--color-accent, #F50DB4); color: #FFFFFF; padding: 8px 12px; font: 600 16px/24px 'Open Runde', system-ui, sans-serif; letter-spacing: -0.01em; transition: filter 200ms ease-out, transform 200ms ease-out; } .ds-start-swap:hover { filter: brightness(0.96); } .ds-start-swap:focus-visible { outline: 3px solid #F9A4E1; outline-offset: 3px; } .ds-start-swap:active { transform: scale(0.97); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Continuous Action",
+    "overview": "A restrained white product canvas where a single magenta action becomes the spatial origin of a familiar swap preview.",
+    "keyCharacteristics": ["Exact Paper geometry", "Open Runde typography", "One magenta accent", "Measured zero-bounce morph"],
+    "rules": [
+      { "name": "The One Action Rule", "body": "Magenta communicates the primary action and is never decorative.", "section": "colors" }
+    ],
+    "dos": ["Preserve the exact Paper endpoints.", "Provide an immediate reduced-motion state change."],
+    "donts": ["Don't add generic Web3 gradients, neon-on-dark styling, glassmorphism, decorative crypto imagery, bounce, extra application chrome, or invented workflow states."]
+  }
+}
